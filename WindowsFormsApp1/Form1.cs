@@ -27,27 +27,27 @@ namespace WindowsFormsApp1
 
 		private void sendMail()
 		{
-			int i;
-			int counter;
-			var body;
-			var emailAdress;
-			string subject;
-			var title;
-			var recepient;
+			int counter = 0;
+			int i = (int)Int64.Parse(counterBox.Text) - 1;
+			var body = bodyBox.Text;
+			var emailAdress = emailBox.Text;
+			string subject = subjectBox.Text;
+			var title = titleBox.Text;
+			var recepient = "Buzi";
+			var fromAddress = new MailAddress(fromBox.Text, title);
+			var toAddress = new MailAddress(emailAdress, recepient);
+			const string fromPassword = "anyuka1212";
+			var smtp = new SmtpClient
+			{
+				Host = "smtp.gmail.com",
+				Port = 587,
+				EnableSsl = true,
+				DeliveryMethod = SmtpDeliveryMethod.Network,
+				UseDefaultCredentials = false,
+				Credentials = new NetworkCredential(fromAddress.Address, fromPassword),
+			};
 			do
 			{
-				var fromAddress = new MailAddress("halorenzo6@gmail.com", title);
-				var toAddress = new MailAddress(emailAdress, recepient);
-				const string fromPassword = "anyuka1212";
-				var smtp = new SmtpClient
-				{
-					Host = "smtp.gmail.com",
-					Port = 587,
-					EnableSsl = true,
-					DeliveryMethod = SmtpDeliveryMethod.Network,
-					UseDefaultCredentials = false,
-					Credentials = new NetworkCredential(fromAddress.Address, fromPassword),
-				};
 				using (var message = new MailMessage(fromAddress, toAddress)
 				{
 					Subject = subject,
@@ -58,7 +58,6 @@ namespace WindowsFormsApp1
 				}
 				counter += 1;
 				i -= 1;
-				Console.WriteLine(b + " emails have been sent");
 				Thread.Sleep(1);
 			} while (i >= 0);
 		}
@@ -66,6 +65,11 @@ namespace WindowsFormsApp1
 		private void Form1_Load_1(object sender, EventArgs e)
 		{
 
+		}
+
+		private void send_Click(object sender, EventArgs e)
+		{
+			sendMail();
 		}
 	}
 }
