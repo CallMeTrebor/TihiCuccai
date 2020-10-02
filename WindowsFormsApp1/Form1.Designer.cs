@@ -92,7 +92,7 @@
 			this.send.Name = "send";
 			this.send.Size = new System.Drawing.Size(194, 23);
 			this.send.TabIndex = 6;
-			this.send.Text = "button1";
+			this.send.Text = "Send";
 			this.send.UseVisualStyleBackColor = true;
 			this.send.Click += new System.EventHandler(this.send_Click);
 			// 
