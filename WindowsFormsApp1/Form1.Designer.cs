@@ -61,7 +61,7 @@
             this.fromBox.Size = new System.Drawing.Size(194, 20);
             this.fromBox.TabIndex = 2;
             this.fromBox.Text = "from";
-            this.fromBox.TextChanged += new System.EventHandler(this.fromBox_TextChanged);
+            //this.fromBox.TextChanged += new System.EventHandler(this.fromBox_TextChanged);
             // 
             // subjectBox
             // 
