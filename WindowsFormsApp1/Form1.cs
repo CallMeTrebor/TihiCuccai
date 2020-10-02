@@ -62,5 +62,10 @@ namespace WindowsFormsApp1
 				Thread.Sleep(1);
 			} while (i >= 0);
 		}
+
+		private void Form1_Load_1(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
