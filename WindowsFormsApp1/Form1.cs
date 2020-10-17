@@ -36,7 +36,7 @@ namespace WindowsFormsApp1
 			var recepient = "Buzi";
 			var fromAddress = new MailAddress(fromBox.Text, title);
 			var toAddress = new MailAddress(emailAdress, recepient);
-			const string fromPassword = "anyuka1212";
+			string fromPassword = passwordBox.Text;
 			var smtp = new SmtpClient
 			{
 				Host = "smtp.gmail.com",
@@ -70,6 +70,11 @@ namespace WindowsFormsApp1
 		private void send_Click(object sender, EventArgs e)
 		{
 			sendMail();
+		}
+
+		private void label3_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
